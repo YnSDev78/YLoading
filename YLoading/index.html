@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body x-data="Main" x-init="listen">
+    <div class="container">
+        <div class="body">
+            <img class="img" src="" alt="ss">
+        </div>
+        <div class="desktop">
+            <div class="cloud-icon"></div>
+            <div class="upserv-icon"></div>
+        </div>
+        <div class="desktop2">
+            <div class="upserv-icon-discord"></div>
+            <a class="discord-link hover-effect" :href="DiscordInviteLink" target="_blank" @click="window.invokeNative('openUrl', DiscordInviteLink);">DISCORD</a>
+        </div>
+        <div class="desktop3">
+            <div class="upserv-icon-boutique"></div>
+            <a class="boutique-link hover-effect2" :href="DiscordInviteLink" target="_blank" @click="window.invokeNative('openUrl', DiscordInviteLink);">BOUTIQUE</a>
+        </div>
+        <div class="desktop4">
+            <h1 class="modeJeux">Les différents mode de jeux</h1>
+        </div>
+        <div class="slideshow">
+            <img src="img/libre.png" alt="" style="width: 536px; height: 312px; margin-top: 15%; margin-left: 6%; border-radius: 15%;">
+            <img src="img/LSPD.png" alt="" style="width: 536px; height: 312px; margin-top: 15%; margin-left: 6%; border-radius: 15%;">
+            <img src="img/PVP.png" alt=""style="width: 536px; height: 312px; margin-top: 15%; margin-left: 6%; border-radius: 15%;">
+        </div>
+        <div class="arrow left" @click="prevImage">&#8249;</div>
+        <div class="arrow right" @click="nextImage">&#8250;</div>
+    </div>
+    <div class="music-container" :class="musicOpen ? 'active':''">
+        <img src="img/music.png" alt="">
+        <div class="visualizer">
+            <div class="bar" :class="isMusicPlaying ? 'active':''"></div>
+            <div class="bar" :class="isMusicPlaying ? 'active2':''"></div>
+            <div class="bar" :class="isMusicPlaying ? 'active3':''"></div>
+        </div>
+        <div class="info">
+            <div class="label" x-text="musicList[currentSong].label"></div>
+            <div class="author" x-text="musicList[currentSong].author"></div>
+            <img src="img/back.svg" alt="" class="back" @click="prev()">
+            <img src="img/pause.svg" alt="" class="pause" x-show="isMusicPlaying"  @click="pause()">
+            <img src="img/play.svg" alt="" class="play" x-show="!isMusicPlaying" @click="play()">
+            <img src="img/forward.svg" alt="" class="forward" @click="next()">
+        </div>
+    </div>
+    <div class="loading-assets">
+        <div class="bar">
+            <div class="loadingbar-loaded"></div>
+        </div>
+    </div>
+    <script>
+        const slideshow = document.querySelector('.slideshow');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const images = slideshow.querySelectorAll('img');
+            images.forEach((image, i) => {
+                if (i === index) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        }
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % slideshow.childElementCount;
+            showImage(currentIndex);
+        }
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + slideshow.childElementCount) % slideshow.childElementCount;
+            showImage(currentIndex);
+        }
+        showImage(currentIndex);
+
+        document.querySelector('.arrow.left').addEventListener('click', prevImage);
+        document.querySelector('.arrow.right').addEventListener('click', nextImage);
+
+        function setImage() {
+            const imgElement = document.querySelector(".img");
+            const nextImgElement = document.querySelector(".img-next");
+            nextImgElement.src = backgroundImages[currentIndex];
+            nextImgElement.classList.add("fadeIn");
+            nextImgElement.onload = () => {
+                imgElement.src = nextImgElement.src;
+                nextImgElement.classList.remove("fadeIn");
+            };
+        }
+        const backgroundImages = [
+          "img/background.png",
+        ];
+        function preloadImages(urls) {
+          return Promise.all(
+            urls.map(url => {
+              return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = url;
+                img.onload = resolve;
+                img.onerror = reject;
+              });
+            })
+          );
+        }
+        function changeBackgroundImage() {
+          const imgElement = document.querySelector(".img");
+          let currentIndex = 0;
+          function setImage() {
+            imgElement.src = backgroundImages[currentIndex];
+          }
+          setImage();
+      
+          setInterval(() => {
+            currentIndex = (currentIndex + 1) % backgroundImages.length;
+            setImage();
+          }, 5000);
+        }
+        preloadImages(backgroundImages).then(() => {
+          changeBackgroundImage();
+        });
+    </script>
+</body>
+</html>

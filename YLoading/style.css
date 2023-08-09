@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #272727; */
+    font-family: Arial, sans-serif;
+}
+
+img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.cloud-icon {
+    width: 150px;
+    height: 90px;
+    margin-top: 75px;
+    margin-left: 380px;
+    display: block;
+    overflow: visible;
+    aspect-ratio: 1.3064516129032258 / 1;
+    background-image: url("img/cloud_icon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.upserv-icon {
+    width: 350px;
+    height: 120px;
+    margin-top: 10px;
+    margin-left: 40px;
+    display: block;
+    overflow: visible;
+    aspect-ratio: 1.3064516129032258 / 1;
+    background-image: url("img/upserv.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.upserv-icon-discord {
+    width: 64px;
+    height: 64px;
+    margin-left: 20px;
+    display: block;
+    overflow: visible;
+    aspect-ratio: 1.3064516129032258 / 1;
+    background-image: url("img/discord.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.upserv-icon-boutique {
+    width: 64px;
+    height: 64px;
+    margin-top: -5px;
+    margin-left: 20px;
+    display: block;
+    overflow: visible;
+    aspect-ratio: 1.3064516129032258 / 1;
+    background-image: url("img/shop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.text-boutique {
+    font-family: Arial Black, Helvetica, sans-serif;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 90px;
+}
+
+a.discord-link {
+    font-family: Arial Black, Helvetica, sans-serif;
+    color: white;
+    font-size: 26px;
+    margin-left: 95px;
+    text-decoration: solid;
+    position: absolute;
+}
+
+a.boutique-link {
+    font-family: Arial Black, Helvetica, sans-serif;
+    color: white;
+    font-size: 26px;
+    margin-left: 95px;
+    text-decoration: solid;
+    position: absolute;
+}
+
+.loading-assets {
+    margin-top: -2%;
+}
+  
+.bar {
+    position: absolute;
+    width: 150vh;
+    height: 2vh;
+    background-color: #272727ec;
+    border-radius: 2vh;
+    margin-top: 25%;
+    margin-left: -75.5%;
+}
+
+.loadingbar-loaded {
+    width: 0%;
+    height: 100%;
+    background-color: #60358C;
+    border-radius: 2vh;
+    border: 1px solid #272727;
+    box-shadow: 0 0 1.5vh rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+
+.desktop2 {
+    box-sizing: border-box;
+    width: 260px;
+    height: 87px;
+    display: block;
+    background-color: #272727ec;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 15px;
+    border: 2px solid #2727274d;
+    margin: 15%;
+    margin-right: 35%;
+}
+
+.desktop3 {
+    box-sizing: border-box;
+    width: 265px;
+    height: 87px;
+    display: block;
+    background-color: #272727ec;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 15px;
+    border: 2px solid #2727274d;
+    margin: 15%;
+    margin-left: 35%;
+}
+
+.desktop {
+    box-sizing: border-box;
+    width: 500px;
+    height: 140px;
+    margin-top: -27%;
+    margin-left: 70.5%;
+    display: block;
+    background-color: #272727ec;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 15px;
+    border: 2px solid #2727274d;
+}
+
+.desktop4 {
+    box-sizing: border-box;
+    width: 350px;
+    height: 35px;
+    margin-top: -17%;
+    margin-left: -60.5%;
+    display: block;
+    background-color: #272727ec;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 10px;
+    border: 2px solid #2727274d;
+}
+
+.modeJeux {
+    font-family: Arial Black, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 19.2px;
+    margin-top: -0.5px;
+    margin-left: 25px;
+}
+
+.slideshow {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.slideshow img {
+    width: 100%;
+    display: none;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #60358C;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.arrow:hover {
+    background-color: #60358C;
+}
+
+.arrow.left {
+    left: 3%;
+    top: 42%;
+}
+
+.arrow.right {
+    right: 63%;
+    top: 42%;
+}
+
+
+.hover-effect:hover {
+    color: #60358C;
+    text-shadow: 1px 0 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 0 -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0);
+}
+
+.hover-effect2:hover {
+    color: #60358C;
+    text-shadow: 1px 0 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 0 -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0);
+}
+
+.music-container{
+    position: absolute;
+    right: 6%;
+    bottom: 70%;
+    width: 18% ;
+    height: 10% ;
+    background-color: #272727ec;
+    background-size: cover;
+    transition-duration: 1s !important;
+    transition-timing-function: linear;
+    border-radius: 5%;
+    border: 2px solid #2727274d;
+}
+
+.music-container.active{
+    transition-duration: 1s !important;
+    transition-timing-function: linear;
+    width: 28.490vw;
+}
+
+.music-container .label{
+    position: absolute;
+    inset: 0;
+    top: 25%;
+    left: 17%;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 500;
+    font-size: 130%;
+    line-height: 1.354vw;
+    color: #FFFFFF;
+}
+.music-container .author{
+    position: absolute;
+    inset: 0;
+    top: 52%;
+    left: 17%;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 500;
+    font-size: 90%;
+    line-height: 0.990vw;
+    color: rgba(255, 255, 255, 0.5);
+}
+.music-container img {
+    position: absolute;
+    inset: 0;
+    top: 11%;
+    left: -18%;
+    width: 35%;
+    height: 90%;
+    border-radius: 15%;
+}
+.music-container .visualizer{
+    position: absolute;
+    top: 60%;
+    left: 94.5%;
+    width: 1.833vw;
+    height: 0.833vw;
+}
+.visualizer .bar {
+    position: relative;
+    display: inline-flex;
+    margin-right: -0.05vw;
+    height: 0.983vw;
+    width: 0.215vw;
+    border-radius: 0.208vw;
+    background-color: #60358C;
+}
+.music-container .back {
+    cursor: pointer;
+    position: absolute ;
+    top: 25%;
+    left: 70%;
+    width: 0.990vw;
+    height:0.990vw ;
+}
+.music-container .pause{
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    left: 80.5%;
+    width: 0.938vw;
+    height: 1.146vw;
+}
+.music-container .forward{
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    left: 90%;
+    width: 0.990vw;
+    height:0.990vw ;
+}
+.music-container .play{
+    cursor: pointer;
+    position: absolute;
+    top: 24.5%;
+    left: 80.5%;
+    width: 0.938vw;
+    height: 1.146vw;
+}
+
+.bar.active {
+    animation: 1.2s music infinite linear;
+}
+.bar.active2 {
+    animation: 1s music infinite linear;
+}
+.bar.active3 {
+    animation: 1.1s music infinite linear;
+}
+
+
+@keyframes music {
+    0%{
+        height: 0.233vw;
+    }
+    50%{
+        height: 0.833vw;
+    }
+    100%{
+        height: 0.233vw;
+    }
+}
+a{
+    text-decoration: none;
+}
